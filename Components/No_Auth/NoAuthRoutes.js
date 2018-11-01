@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View} from 'react-native'
+import {Text, View, Button} from 'react-native'
 import { createStackNavigator } from 'react-navigation';
 
 /*class SignIn extends React.Component{
@@ -12,14 +12,31 @@ import { createStackNavigator } from 'react-navigation';
         
     }
 }*/
-const SignIn = () => <Text>Sing IN</Text>;
-const SignOut = () => <Text>Sing OUT</Text>;
+const SignIn = (props) => {
+    
+    return (
+        <View>
+            <Text>Sing IN</Text>
+            <Button 
+                title="Navegar al SignUp"
+                onPress={() => props.navigation.navigate('SignUp')}
+            />
+        </View>
+        
+    );
+}
+const SignUp = () => <Text>Sing OUT</Text>;
 
-export default NoAuthRoutes = createStackNavigator({
-    SignIn: {
-        screen: SignIn
+export default NoAuthRoutes = createStackNavigator(
+    {
+        SignIn: {
+            screen: SignIn
+        },
+        SignUp: {
+            screen: SignUp
+        },
     },
-    SignOut: {
-        screen: SignOut
+    {
+        headerMode: 'none'
     }
-});
+);
