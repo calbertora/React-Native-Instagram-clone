@@ -6,7 +6,9 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+          <Text style={styles.textStyle}>Mostrando Texto</Text>
+          <NoAuthRoutes/>
+          <Text style={styles.textStyle}>Mostrando Texto</Text>
       </View>
     );
   }
@@ -14,9 +16,10 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 3,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+  textStyle: {
+    padding: 20
+  }
 });
